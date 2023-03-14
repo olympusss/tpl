@@ -12,8 +12,8 @@
         height="40"
       >
         <v-spacer></v-spacer>
-        <v-toolbar-items 
-          style="margin-right: 45px;"
+        <v-toolbar-items
+          class="v-toolbar-items"
         >
           <v-toolbar-title
             class="btn mt-1 ml-12" 
@@ -40,33 +40,31 @@
         </v-toolbar-items>
         <v-divider 
           vertical 
-          class="mx-0"
+          class="mr-n1"
         >
         </v-divider>
         <v-btn
           color="#212135"
+          id="attachMenu"
           :v-bind="buttonName"
           small
           flat
           depressed
           tile
           height="40"
+          class="mx-1"
           @click="expand = !expand"
         >
           {{ buttonName }}
         </v-btn>
         <v-divider 
           vertical 
-          class="ml-0"
+          class="mx-n1"
         ></v-divider>
-        
         <v-menu
-          transition="slide-y-transition"
           v-model="expand"
-          position-x="1151"
-          position-y="40"
           tile
-          min-width="100"
+          location="bottom right"
         >
           <v-list class="py-0" 
             color="#212135"
@@ -79,7 +77,6 @@
             >
               <v-list-item-title
                 style="font-size: smaller;"
-                
               >
                 {{ lang.name }}
               </v-list-item-title>
@@ -120,5 +117,16 @@ export default {
 .btn {
   text-transform: unset !important;
 }
+.pointer {
+  align-self: center;
+}
 
+.v-toolbar-items {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  margin-right: 45px;
+  margin-left: 45px;
+}
 </style>
